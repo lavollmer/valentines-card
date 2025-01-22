@@ -8,7 +8,7 @@ interface Props {
 
 const YouAreLoved: React.FC<Props> = ({ firstName, message }) => {
   return (
-    <div className="bg-cherryRed h-screen flex justify-center items-center font-rubik">
+    <div className="bg-cherryRed flex flex-row justify-center items-center font-rubik">
       <div>
         <img src={heartRed} alt="heart" className="h-16 w-16" />
       </div>

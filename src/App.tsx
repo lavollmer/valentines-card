@@ -12,11 +12,11 @@ import Vintage from "./components/Vintage";
 import Preview from "./components/Preview";
 
 function App() {
-  const [message, setMessage] = useState();
-  const [firstName, setFirstName] = useState();
+  const [message, setMessage] = useState("");
+  const [firstName, setFirstName] = useState("");
   // const [email, setEmail] = useState();
   const [card, setCard] = useState();
-  const [selectedCard, setSelectedCard] = useState("Valentines");
+  const [selectedCard, setSelectedCard] = useState("");
   const [showCard, setShowCard] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
 
@@ -112,13 +112,13 @@ function App() {
         <div>{showPreview && <Preview />}</div>
         <div>
           {showCard && selectedCard === "YouAreLoved" && (
-            <YouAreLoved firstName="firstName" message="message" />
+            <YouAreLoved firstName={firstName} message={message} />
           )}
           {showCard && selectedCard === "Vintage" && (
-            <Vintage firstName="firstName" message="message" />
+            <Vintage firstName={firstName} message={message}  />
           )}
           {showCard && selectedCard === "ValentinesCard" && (
-            <ValentinesCard firstName="firstName" message="message" />
+            <ValentinesCard firstName={firstName} message={message} />
           )}
           <Footer />
         </div>
