@@ -2,12 +2,20 @@ import YouAreLoved from "./YouAreLoved";
 import Vintage from "./Vintage";
 import ValentinesCard from "./ValentinesCard";
 
-const Preview = () => {
+interface Props {
+  firstName: string;
+  message: string;
+  fromName: string;
+}
+
+const Preview: React.FC<Props> = ({firstName, message, fromName}) => {
   return (
     <div className="bg-mauvePink h-screen flex justify-center items-center">
-      <YouAreLoved firstName="firstName" message="message" />
-      <Vintage />
-      <ValentinesCard />
+      <div className="flex flex-col items-center justify-center h-full">
+        <YouAreLoved firstName={firstName} message={message} fromName={fromName} />
+        <Vintage firstName={firstName} message={message} fromName={fromName}/>
+        <ValentinesCard firstName={firstName} message={message} fromName={fromName} />
+      </div>
     </div>
   );
 };

@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 interface Props {
   firstName: string;
   message: string;
+  fromName: string;
 }
 
-const ValentinesCard:React.FC<Props> = ({ firstName, message }) => {
+const ValentinesCard:React.FC<Props> = ({ firstName, message,fromName }) => {
   return (
     <>
       <div className="bg-mauvePink h-screen flex justify-center items-center">
@@ -19,6 +20,9 @@ const ValentinesCard:React.FC<Props> = ({ firstName, message }) => {
           </div>
           <div>
             {message}
+          </div>
+          <div>
+            From {fromName}
           </div>
         </motion.div>
       </div>

@@ -4,9 +4,10 @@ import Sparkles from "../assets/sparkles.png";
 interface Props {
   firstName: string;
   message: string;
+  fromName: string;
 }
 
-const YouAreLoved: React.FC<Props> = ({ firstName, message }) => {
+const YouAreLoved: React.FC<Props> = ({ firstName, message,fromName }) => {
   return (
     <div className="bg-cherryRed flex flex-row justify-center items-center font-rubik">
       <div>
@@ -14,9 +15,11 @@ const YouAreLoved: React.FC<Props> = ({ firstName, message }) => {
       </div>
       <div>
         <h1 className="text-white text-2xl">
-          Reminder: You are loved {firstName}
+          Reminder: You are loved
         </h1>
+        <h1>{firstName}</h1>
         <p className="text-white text-lg">{message}</p>
+        <p className="text-white text-lg">From {fromName}</p>
         <img src={Sparkles} alt="sparkles" className="h-16 w-16" />
       </div>
     </div>

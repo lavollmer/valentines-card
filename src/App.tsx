@@ -2,7 +2,6 @@ import "./App.css";
 import "./index.css";
 import "./components/ValentinesCard";
 import Footer from "./components/Footer";
-import Loading from "./components/Loading";
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdMail } from "react-icons/io";
@@ -14,15 +13,16 @@ import Preview from "./components/Preview";
 function App() {
   const [message, setMessage] = useState("");
   const [firstName, setFirstName] = useState("");
-  // const [email, setEmail] = useState();
-  const [card, setCard] = useState();
   const [selectedCard, setSelectedCard] = useState("");
   const [showCard, setShowCard] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
+  const [fromName, setFromName] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(`Message: ${message} | Name: ${firstName}`);
+    console.log(
+      `Message: ${message} | Name: ${firstName} | Card: ${selectedCard} | From: ${fromName}`
+    );
     setShowCard(true);
   };
 
@@ -49,7 +49,7 @@ function App() {
           <div className="flex flex-col items-center justify-center pt-6">
             <button
               className="flex flex-row items-center justify-center text-md px-6 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
-              type="submit"
+              type="button"
               onClick={handlePreview}
             >
               <p>Card Selection Options</p>
@@ -77,6 +77,15 @@ function App() {
                 placeholder=" Please enter a message"
                 className="h-10 border border-eggplant rounded-lg"
                 onChange={(e) => setMessage(e.target.value)}
+              />
+            </div>
+            <div className="flex flex-col justify-start space-y-2">
+              <h1>What would you like to be in the signature?</h1>
+              <input
+                value={fromName}
+                placeholder=" Please enter a name"
+                className="h-10 border border-eggplant rounded-lg"
+                onChange={(e) => setFromName(e.target.value)}
               />
             </div>
             {/* <div className="flex flex-col justify-start space-y-2">
@@ -109,16 +118,36 @@ function App() {
             </button>
           </form>
         </div>
-        <div>{showPreview && <Preview />}</div>
+        <div>
+          {showPreview && (
+            <Preview
+              firstName={firstName}
+              message={message}
+              fromName={fromName}
+            />
+          )}
+        </div>
         <div>
           {showCard && selectedCard === "YouAreLoved" && (
-            <YouAreLoved firstName={firstName} message={message} />
+            <YouAreLoved
+              firstName={firstName}
+              message={message}
+              fromName={fromName}
+            />
           )}
           {showCard && selectedCard === "Vintage" && (
-            <Vintage firstName={firstName} message={message}  />
+            <Vintage
+              firstName={firstName}
+              message={message}
+              fromName={fromName}
+            />
           )}
           {showCard && selectedCard === "ValentinesCard" && (
-            <ValentinesCard firstName={firstName} message={message} />
+            <ValentinesCard
+              firstName={firstName}
+              message={message}
+              fromName={fromName}
+            />
           )}
           <Footer />
         </div>
