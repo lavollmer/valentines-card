@@ -9,6 +9,7 @@ import { IoMdMail } from "react-icons/io";
 import YouAreLoved from "./components/YouAreLoved";
 import ValentinesCard from "./components/ValentinesCard";
 import Vintage from "./components/Vintage";
+import Preview from "./components/Preview";
 
 function App() {
   const [message, setMessage] = useState();
@@ -16,6 +17,7 @@ function App() {
   const [email, setEmail] = useState();
   const [card, setCard] = useState();
   const [showCard, setShowCard] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     console.log(`Message: ${message} | Name: ${firstName}`);
@@ -29,10 +31,15 @@ function App() {
     setShowCard(true);
   };
 
+  const handlePreview = (e: React.FormEvent) => {
+    window.location.reload();
+    setShowPreview(true);
+  };
+
   return (
     <>
       <div className="bg-mauvePink h-screen flex flex-col justify-center items-center font-rubik">
-        <div className="p-8">
+        <div className="flex flex-col p-8">
           <h1 className="font-bold text-lg md:text-xl">
             Send a Valentine's Day Card
             <CiHeart className="inline-block text-2xl text-fairytalePink" />
@@ -40,6 +47,15 @@ function App() {
           <p className="flex flex-row items-center justify-center font-xs">
             for free
           </p>
+          <div className="flex flex-col items-center justify-center pt-6">
+            <button
+              className="flex flex-row items-center justify-center text-md px-6 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
+              type="submit"
+              onClick={handlePreview}
+            >
+              <p>Card Selection Options</p>
+            </button>
+          </div>
         </div>
         <div className="md:w-1/3 md:h-2/3 bg-fairytalePink rounded-lg item-stretch p-6">
           <form
@@ -91,8 +107,13 @@ function App() {
             </button>
           </form>
         </div>
-        {showCard && <YouAreLoved />}
-        <Footer />
+        <div>{showPreview && <Preview />}</div>
+        <div>
+          {showCard && <YouAreLoved firstName="firstName" message="message" />}
+          {showCard && <Vintage />}
+          {showCard && <ValentinesCard />}
+          <Footer />
+        </div>
       </div>
     </>
   );

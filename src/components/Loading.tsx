@@ -1,8 +1,8 @@
 const Loading = () => {
   return (
-    <div>
-      <p>Your card has been sent.</p>
-      <p>Sent with love!</p>
+    <div className="flex items-center justify-center space-x-2">
+      <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
+      Loading
     </div>
   );
 };
