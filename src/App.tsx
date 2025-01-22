@@ -20,6 +20,7 @@ function App() {
   const [showPreview, setShowPreview] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     console.log(`Message: ${message} | Name: ${firstName}`);
     setMessage(message);
     setFirstName(firstName);
@@ -27,7 +28,8 @@ function App() {
     setCard(card);
   };
 
-  const handleCard = (e: React.FormEvent) => {
+  const handleCard = (selectedCard : string) => {
+    setCard(selectedCard);
     setShowCard(true);
   };
 
@@ -38,7 +40,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-mauvePink h-screen flex flex-col justify-center items-center font-rubik">
+      <div className="bg-mauvePink h-screen w-screen flex flex-col justify-center items-center font-rubik">
         <div className="flex flex-col p-8">
           <h1 className="font-bold text-lg md:text-xl">
             Send a Valentine's Day Card
@@ -100,7 +102,7 @@ function App() {
             <button
               className="flex flex-row items-center justify-center space-x-2 px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
               type="submit"
-              onClick={handleCard}
+              onClick={()=> handleCard(card)}
             >
               <p>Send</p>
               <IoMdMail className="text-xl" />
@@ -109,9 +111,9 @@ function App() {
         </div>
         <div>{showPreview && <Preview />}</div>
         <div>
-          {showCard && <YouAreLoved firstName="firstName" message="message" />}
-          {showCard && <Vintage />}
-          {showCard && <ValentinesCard />}
+          {showCard && card === "YouAreLoved" && <YouAreLoved firstName="firstName" message="message" />}
+          {showCard && card === "Vintage" && <Vintage />}
+          {showCard && card === "ValentinesCard" && <ValentinesCard />}
           <Footer />
         </div>
       </div>
