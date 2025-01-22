@@ -11,35 +11,28 @@ import ValentinesCard from "./components/ValentinesCard";
 import Vintage from "./components/Vintage";
 import Preview from "./components/Preview";
 
-
 function App() {
   const [message, setMessage] = useState();
   const [firstName, setFirstName] = useState();
   // const [email, setEmail] = useState();
   const [card, setCard] = useState();
-  const [selectedCard, setSelectedCard] = useState();
+  const [selectedCard, setSelectedCard] = useState("Valentines");
   const [showCard, setShowCard] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(`Message: ${message} | Name: ${firstName}`);
-    setMessage(message);
-    setFirstName(firstName);
-    // setEmail(email);
-    setCard(card);
-    setSelectedCard(card);
-  };
-
-  const handleCard = () => {
-    setCard(selectedCard);
     setShowCard(true);
   };
 
+  const handleCardChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCard(e.target.value);
+  };
+
   const handlePreview = (e: React.FormEvent) => {
-    window.location.reload();
-    setShowPreview(true);
     e.preventDefault();
+    setShowPreview(true);
   };
 
   return (
@@ -97,18 +90,19 @@ function App() {
             </div> */}
             <div>
               <h1>Choose a card:</h1>
-              <select className="h-10 border border-eggplant rounded-lg">
+              <select
+                className="h-10 border border-eggplant rounded-lg"
+                value={selectedCard}
+                onChange={handleCardChange}
+              >
                 <option value="Valentines">Happy Valentine's Day</option>
                 <option value="YouAreLoved">Reminder: You Are Loved</option>
-                <option value="Vintage">
-                  Vintage Happy Valentine's Day
-                </option>
+                <option value="Vintage">Vintage Happy Valentine's Day</option>
               </select>
             </div>
             <button
               className="flex flex-row items-center justify-center space-x-2 px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
               type="submit"
-              onClick={() => handleCard()}
             >
               <p>Send</p>
               <IoMdMail className="text-xl" />
