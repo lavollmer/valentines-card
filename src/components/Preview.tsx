@@ -3,11 +3,13 @@ import Vintage from "./Vintage";
 import ValentinesCard from "./ValentinesCard";
 
 const Preview = () => {
-  return <div>
-    <YouAreLoved firstName="firstName" message="message" />
-    <Vintage />
-    <ValentinesCard />
-  </div>;
+  return (
+    <div className="bg-mauvePink h-screen flex justify-center items-center">
+      <YouAreLoved firstName="firstName" message="message" />
+      <Vintage />
+      <ValentinesCard />
+    </div>
+  );
 };
 
 export default Preview;
