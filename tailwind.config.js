@@ -13,6 +13,7 @@ export default {
         greenCadet: "#88a09e",
         greenDark: "#558b6e",
         stone: "#fafaf9",
+        cherryRed: "#9d252c",
       },
     },
     plugins: [],
