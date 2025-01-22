@@ -2,6 +2,7 @@ import "./App.css";
 import "./index.css";
 import "./components/ValentinesCard";
 import Footer from "./components/Footer";
+import Loading from "./components/Loading";
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdMail } from "react-icons/io";
@@ -9,27 +10,29 @@ import { IoMdMail } from "react-icons/io";
 function App() {
   const [message, setMessage] = useState();
   const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [card, setCard] = useState();
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
     console.log(`Message: ${message} | Name: ${name}`);
   };
 
   return (
     <>
       <div className="bg-mauvePink h-screen flex flex-col justify-center items-center font-rubik">
-        <div>
-          <h1 className="font-bold text-xl p-10">
+        <div className="p-10">
+          <h1 className="font-bold text-xl">
             Send a Valentine's Card
             <CiHeart className="inline-block text-2xl text-fairytalePink" />
           </h1>
+          <p className="flex flex-row items-center justify-center font-xs">for free</p>
         </div>
-        <div className="w-80 h-80 bg-fairytalePink rounded-lg item-stretch">
+        <div className="w-1/3 h-2/3 bg-fairytalePink rounded-lg item-stretch">
           <form
-            className="flex flex-col items-center justify-center space-y-8 h-full w-full"
+            className="flex flex-col items-center justify-center space-y-4 h-full w-full"
             onSubmit={handleSubmit}
           >
-            <div className="flex flex-col justify-start space-y-4">
+            <div className="flex flex-col justify-start space-y-2">
               <h1>What is their name?</h1>
               <input
                 value={name}
@@ -38,14 +41,31 @@ function App() {
                 className="h-10 border border-eggplant rounded-lg"
               />
             </div>
-            <div className="flex flex-col justify-start space-y-4">
+            <div className="flex flex-col justify-start space-y-2">
               <h1>What is your message?</h1>
               <input
                 value={message}
                 placeholder=" Please enter a message"
-                className="h-10 row-span-4 border border-eggplant rounded-lg"
+                className="h-10 border border-eggplant rounded-lg"
                 onChange={(e) => setMessage(e.target.value)}
               />
+            </div>
+            <div className="flex flex-col justify-start space-y-2">
+              <h1> What is their email?</h1>
+              <input
+                value={email}
+                placeholder="Please enter your email"
+                className="h-10 border border-eggplant rounded-lg"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <h1>Choose a card:</h1>
+              <select className="h-10 border border-eggplant rounded-lg">
+                <option value={card}>Happy Valentine's Day</option>
+                <option value={card}>Reminder:You Are Loved</option>
+                <option value={card}>Vintage Happy Valentine's Day</option>
+              </select>
             </div>
             <button
               className="flex flex-row items-center justify-center space-x-2 px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
