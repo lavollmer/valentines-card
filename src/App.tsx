@@ -12,15 +12,15 @@ import Vintage from "./components/Vintage";
 
 function App() {
   const [message, setMessage] = useState();
-  const [name, setName] = useState();
+  const [firstName, setFirstName] = useState();
   const [email, setEmail] = useState();
   const [card, setCard] = useState();
   const [showCard, setShowCard] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    console.log(`Message: ${message} | Name: ${name}`);
+    console.log(`Message: ${message} | Name: ${firstName}`);
     setMessage(message);
-    setName(name);
+    setFirstName(firstName);
     setEmail(email);
     setCard(card);
   };
@@ -47,11 +47,11 @@ function App() {
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col justify-start space-y-2">
-              <h1>What is their name?</h1>
+              <h1>What is their first name?</h1>
               <input
-                value={name}
+                value={firstName}
                 placeholder=" Please enter your name"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setFirstName(e.target.value)}
                 className="h-10 border border-eggplant rounded-lg"
               />
             </div>
