@@ -4,6 +4,7 @@ import "./components/ValentinesCard";
 import Footer from "./components/Footer";
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
+import { IoMdMail } from "react-icons/io";
 
 function App() {
   const [message, setMessage] = useState();
@@ -47,10 +48,11 @@ function App() {
               />
             </div>
             <button
-              className="px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
+              className="flex flex-row items-center justify-center space-x-2 px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
               type="submit"
             >
-              Send
+              <p>Send</p>
+              <IoMdMail className="text-xl" />
             </button>
           </form>
         </div>
