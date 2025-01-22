@@ -6,15 +6,27 @@ import Loading from "./components/Loading";
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdMail } from "react-icons/io";
+import YouAreLoved from "./components/YouAreLoved";
+import ValentinesCard from "./components/ValentinesCard";
+import Vintage from "./components/Vintage";
 
 function App() {
   const [message, setMessage] = useState();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [card, setCard] = useState();
+  const [showCard, setShowCard] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     console.log(`Message: ${message} | Name: ${name}`);
+    setMessage(message);
+    setName(name);
+    setEmail(email);
+    setCard(card);
+  };
+
+  const handleCard = (e: React.FormEvent) => {
+    setShowCard(true);
   };
 
   return (
@@ -25,7 +37,9 @@ function App() {
             Send a Valentine's Day Card
             <CiHeart className="inline-block text-2xl text-fairytalePink" />
           </h1>
-          <p className="flex flex-row items-center justify-center font-xs">for free</p>
+          <p className="flex flex-row items-center justify-center font-xs">
+            for free
+          </p>
         </div>
         <div className="md:w-1/3 md:h-2/3 bg-fairytalePink rounded-lg item-stretch p-6">
           <form
@@ -70,12 +84,14 @@ function App() {
             <button
               className="flex flex-row items-center justify-center space-x-2 px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
               type="submit"
+              onClick={handleCard}
             >
               <p>Send</p>
               <IoMdMail className="text-xl" />
             </button>
           </form>
         </div>
+        {showCard && <YouAreLoved />}
         <Footer />
       </div>
     </>
