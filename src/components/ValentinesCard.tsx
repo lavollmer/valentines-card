@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
-function ValentinesCard() {
+interface Props {
+  firstName: string;
+  message: string;
+}
+
+const ValentinesCard:React.FC<Props> = ({ firstName, message }) => {
   return (
     <>
       <div className="bg-mauvePink h-screen flex justify-center items-center">
@@ -10,7 +15,10 @@ function ValentinesCard() {
           className="w-80 h-80 bg-fairytalePink rounded-lg"
         >
           <div className="flex flex-col items-center justify-center h-full">
-            <h1>Happy Valentine's Day!</h1>
+            <h1>Happy Valentine's Day {firstName}!</h1>
+          </div>
+          <div>
+            {message}
           </div>
         </motion.div>
       </div>

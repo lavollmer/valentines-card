@@ -11,11 +11,13 @@ import ValentinesCard from "./components/ValentinesCard";
 import Vintage from "./components/Vintage";
 import Preview from "./components/Preview";
 
+
 function App() {
   const [message, setMessage] = useState();
   const [firstName, setFirstName] = useState();
-  const [email, setEmail] = useState();
+  // const [email, setEmail] = useState();
   const [card, setCard] = useState();
+  const [selectedCard, setSelectedCard] = useState();
   const [showCard, setShowCard] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
 
@@ -24,11 +26,12 @@ function App() {
     console.log(`Message: ${message} | Name: ${firstName}`);
     setMessage(message);
     setFirstName(firstName);
-    setEmail(email);
+    // setEmail(email);
     setCard(card);
+    setSelectedCard(card);
   };
 
-  const handleCard = (selectedCard : string) => {
+  const handleCard = () => {
     setCard(selectedCard);
     setShowCard(true);
   };
@@ -36,6 +39,7 @@ function App() {
   const handlePreview = (e: React.FormEvent) => {
     window.location.reload();
     setShowPreview(true);
+    e.preventDefault();
   };
 
   return (
@@ -82,7 +86,7 @@ function App() {
                 onChange={(e) => setMessage(e.target.value)}
               />
             </div>
-            <div className="flex flex-col justify-start space-y-2">
+            {/* <div className="flex flex-col justify-start space-y-2">
               <h1> What is their email?</h1>
               <input
                 value={email}
@@ -90,19 +94,21 @@ function App() {
                 className="h-10 border border-eggplant rounded-lg"
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </div>
+            </div> */}
             <div>
               <h1>Choose a card:</h1>
               <select className="h-10 border border-eggplant rounded-lg">
-                <option value={card}>Happy Valentine's Day</option>
-                <option value={card}>Reminder:You Are Loved</option>
-                <option value={card}>Vintage Happy Valentine's Day</option>
+                <option value="Valentines">Happy Valentine's Day</option>
+                <option value="YouAreLoved">Reminder: You Are Loved</option>
+                <option value="Vintage">
+                  Vintage Happy Valentine's Day
+                </option>
               </select>
             </div>
             <button
               className="flex flex-row items-center justify-center space-x-2 px-8 py-2 bg-eggplant rounded-lg text-white hover:bg-greenCadet"
               type="submit"
-              onClick={()=> handleCard(card)}
+              onClick={() => handleCard()}
             >
               <p>Send</p>
               <IoMdMail className="text-xl" />
@@ -111,9 +117,15 @@ function App() {
         </div>
         <div>{showPreview && <Preview />}</div>
         <div>
-          {showCard && card === "YouAreLoved" && <YouAreLoved firstName="firstName" message="message" />}
-          {showCard && card === "Vintage" && <Vintage />}
-          {showCard && card === "ValentinesCard" && <ValentinesCard />}
+          {showCard && selectedCard === "YouAreLoved" && (
+            <YouAreLoved firstName="firstName" message="message" />
+          )}
+          {showCard && selectedCard === "Vintage" && (
+            <Vintage firstName="firstName" message="message" />
+          )}
+          {showCard && selectedCard === "ValentinesCard" && (
+            <ValentinesCard firstName="firstName" message="message" />
+          )}
           <Footer />
         </div>
       </div>

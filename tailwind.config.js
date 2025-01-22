@@ -14,6 +14,7 @@ export default {
         greenDark: "#558b6e",
         stone: "#fafaf9",
         cherryRed: "#9d252c",
+        parchment: "#fcf5e5",
       },
     },
     plugins: [],
