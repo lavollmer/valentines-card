@@ -20,14 +20,14 @@ function App() {
   return (
     <>
       <div className="bg-mauvePink h-screen flex flex-col justify-center items-center font-rubik">
-        <div className="p-10">
-          <h1 className="font-bold text-xl">
-            Send a Valentine's Card
+        <div className="p-8">
+          <h1 className="font-bold text-lg md:text-xl">
+            Send a Valentine's Day Card
             <CiHeart className="inline-block text-2xl text-fairytalePink" />
           </h1>
           <p className="flex flex-row items-center justify-center font-xs">for free</p>
         </div>
-        <div className="w-1/3 h-2/3 bg-fairytalePink rounded-lg item-stretch">
+        <div className="md:w-1/3 md:h-2/3 bg-fairytalePink rounded-lg item-stretch p-6">
           <form
             className="flex flex-col items-center justify-center space-y-4 h-full w-full"
             onSubmit={handleSubmit}
