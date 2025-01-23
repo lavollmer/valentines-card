@@ -1,5 +1,5 @@
-import "./App.css";
-import "./index.css";
+import "../App.css"
+import "../index.css";
 import Footer from "./Footer";
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
@@ -7,8 +7,8 @@ import { IoMdMail } from "react-icons/io";
 import YouAreLoved from "./YouAreLoved";
 import ValentinesCard from "./ValentinesCard";
 import Vintage from "./Vintage";
-import SentCard from "./SentCard";
 import Preview from "./Preview";
+import { useNavigate } from "react-router-dom";
 
 const MainValentinesPage: React.FC = () => {
   const [message, setMessage] = useState("");
