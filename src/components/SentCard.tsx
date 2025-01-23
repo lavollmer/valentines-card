@@ -19,8 +19,10 @@ const SentCard: React.FC<SentCardProps> = () => {
     window.location.href = "/";
   };
 
+  console.log(selectedCard);
+
   return (
-    <div className="flex flex-col h-screen w-screen bg-mauvePink justify-center items-center font-rubik">
+    <div className="flex flex-col h-screen w-screen bg-mauvePink justify-center items-center font-rubik space-y-10">
       <div>
         {selectedCard === "YouAreLoved" && (
           <YouAreLoved
@@ -36,7 +38,7 @@ const SentCard: React.FC<SentCardProps> = () => {
             fromName={fromName}
           />
         )}
-        {selectedCard === "ValentinesCard" && (
+        {selectedCard === "Valentines" && (
           <ValentinesCard
             firstName={firstName}
             message={message}
@@ -44,14 +46,14 @@ const SentCard: React.FC<SentCardProps> = () => {
           />
         )}
       </div>
-      <h1>Your Card Has Been Sent!</h1>
+      <h1 className="font-xl text-white">Your Card Has Been Sent!</h1>
       <div>
         <button
           type="button"
           onClick={returnHome}
-          className="px-8 py-2 bg-greenCadet text-white rounded-lg font-rubik"
+          className="px-8 py-2 bg-eggplant hover:bg-greenCadet text-white rounded-lg font-rubik"
         >
-          Return to Home
+          Send Another Card
         </button>
       </div>
     </div>

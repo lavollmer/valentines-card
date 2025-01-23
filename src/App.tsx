@@ -1,6 +1,5 @@
 import "./App.css";
 import "./index.css";
-import "./components/ValentinesCard";
 import Footer from "./components/Footer";
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
@@ -27,17 +26,19 @@ const MainPage: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const handleCardChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCard(e.target.value);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(
       `Message: ${message} | Name: ${firstName} | Card: ${selectedCard} | From: ${fromName}`
     );
     setShowCard(true);
-    navigate("/sentcard", { state: { firstName, message, fromName } });
-  };
-
-  const handleCardChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCard(e.target.value);
+    navigate("/sentcard", {
+      state: { firstName, message, fromName, selectedCard },
+    });
   };
 
   const handlePreview = (e: React.FormEvent) => {
@@ -114,6 +115,7 @@ const MainPage: React.FC = () => {
               value={selectedCard}
               onChange={handleCardChange}
             >
+              <option value="">Select a card</option>
               <option value="Valentines">Happy Valentine's Day</option>
               <option value="YouAreLoved">Reminder: You Are Loved</option>
               <option value="Vintage">Vintage Happy Valentine's Day</option>
@@ -153,7 +155,7 @@ const MainPage: React.FC = () => {
             fromName={fromName}
           />
         )}
-        {showCard && selectedCard === "ValentinesCard" && (
+        {showCard && selectedCard === "Valentines" && (
           <ValentinesCard
             firstName={firstName}
             message={message}
