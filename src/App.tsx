@@ -1,12 +1,9 @@
-import React, { useState } from "react";
 import MainValentinesPage from "./components/MainValentinesPage";
 import Preview from "./components/Preview";
 import SentCard from "./components/SentCard";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import "./App.css";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
