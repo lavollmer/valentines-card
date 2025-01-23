@@ -41,7 +41,7 @@ const MainPage: React.FC = () => {
   const handlePreview = (e: React.FormEvent) => {
     e.preventDefault();
     setShowPreview(true);
-    navigate("/previewcards");
+    navigate("/previewcards", { state: { firstName, message, fromName } });
   };
 
   return (
@@ -169,16 +169,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route
-          path="/previewcards"
-          element={
-            <Preview
-              firstName={firstName}
-              message={message}
-              fromName={fromName}
-            />
-          }
-        />
+        <Route path="/previewcards" element={<Preview />} />
       </Routes>
     </Router>
   );
