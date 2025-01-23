@@ -32,6 +32,7 @@ const MainPage: React.FC = () => {
     console.log(
       `Message: ${message} | Name: ${firstName} | Card: ${selectedCard} | From: ${fromName}`
     );
+    setShowCard(true);
     navigate("/sentcard", { state: { firstName, message, fromName } });
   };
 

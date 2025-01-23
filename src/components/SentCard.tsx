@@ -14,6 +14,11 @@ const SentCard: React.FC<SentCardProps> = () => {
   const location = useLocation();
   const { firstName, message, fromName, selectedCard } =
     location.state as SentCardProps;
+
+  const returnHome = () => {
+    window.location.href = "/";
+  };
+
   return (
     <div className="flex flex-col h-screen w-screen bg-mauvePink justify-center items-center font-rubik">
       <div>
@@ -40,6 +45,15 @@ const SentCard: React.FC<SentCardProps> = () => {
         )}
       </div>
       <h1>Your Card Has Been Sent!</h1>
+      <div>
+        <button
+          type="button"
+          onClick={returnHome}
+          className="px-8 py-2 bg-greenCadet text-white rounded-lg font-rubik"
+        >
+          Return to Home
+        </button>
+      </div>
     </div>
   );
 };

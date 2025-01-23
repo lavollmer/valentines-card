@@ -12,10 +12,15 @@ interface Props {
 const Preview: React.FC<Props> = () => {
   const location = useLocation();
   const { firstName, message, fromName } = location.state as Props;
+  
+  const returnHome = () => {
+    window.location.href = "/";
+  };
 
   return (
-    <div className="bg-mauvePink h-screen flex justify-center items-center">
-      <div className="flex flex-col items-center justify-center h-full">
+    <div className="bg-mauvePink h-screen w-screen flex flex-col justify-center items-center">
+      <div className="flex flex-row items-center justify-center h-full">
+        <div>
         <YouAreLoved
           firstName={firstName}
           message={message}
@@ -27,6 +32,14 @@ const Preview: React.FC<Props> = () => {
           message={message}
           fromName={fromName}
         />
+        </div>
+        <button
+          type="button"
+          onClick={returnHome}
+          className="px-8 py-2 bg-greenCadet text-white rounded-lg font-rubik"
+        >
+          Return to Home
+        </button>
       </div>
     </div>
   );
