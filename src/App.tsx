@@ -8,6 +8,7 @@ import { IoMdMail } from "react-icons/io";
 import YouAreLoved from "./components/YouAreLoved";
 import ValentinesCard from "./components/ValentinesCard";
 import Vintage from "./components/Vintage";
+import SentCard from "./components/SentCard";
 import Preview from "./components/Preview";
 import {
   BrowserRouter as Router,
@@ -31,7 +32,7 @@ const MainPage: React.FC = () => {
     console.log(
       `Message: ${message} | Name: ${firstName} | Card: ${selectedCard} | From: ${fromName}`
     );
-    setShowCard(true);
+    navigate("/sentcard", { state: { firstName, message, fromName } });
   };
 
   const handleCardChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -170,6 +171,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/previewcards" element={<Preview />} />
+        <Route path="/sentcard" element={<SentCard />} />
       </Routes>
     </Router>
   );
