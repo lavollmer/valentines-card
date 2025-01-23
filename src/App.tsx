@@ -60,15 +60,6 @@ function App() {
             </button>
           </div>
         </div>
-
-        <div>
-          <p className="text-white text-lg">
-            Send a Valentine's Day card to someone you love. Fill out the form
-            below and choose a card to send. You can preview the card before
-            sending it.
-          </p>
-        </div>
-
         <div className="md:w-1/3 md:h-2/3 bg-fairytalePink rounded-lg item-stretch p-6">
           <form
             className="flex flex-col items-center justify-center space-y-4 h-full w-full"
