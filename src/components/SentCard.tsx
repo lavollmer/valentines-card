@@ -23,6 +23,16 @@ const SentCard: React.FC<SentCardProps> = () => {
 
   return (
     <div className="flex flex-col h-screen w-screen bg-mauvePink justify-center items-center font-rubik space-y-10">
+      <h1 className="font-xl text-white">Your Card Has Been Sent!</h1>
+      <div>
+        <button
+          type="button"
+          onClick={returnHome}
+          className="px-8 py-2 bg-eggplant hover:bg-greenCadet text-white rounded-lg font-rubik font-bold"
+        >
+          Send Another Card
+        </button>
+      </div>
       <div>
         {selectedCard === "YouAreLoved" && (
           <YouAreLoved
@@ -45,16 +55,6 @@ const SentCard: React.FC<SentCardProps> = () => {
             fromName={fromName}
           />
         )}
-      </div>
-      <h1 className="font-xl text-white">Your Card Has Been Sent!</h1>
-      <div>
-        <button
-          type="button"
-          onClick={returnHome}
-          className="px-8 py-2 bg-eggplant hover:bg-greenCadet text-white rounded-lg font-rubik"
-        >
-          Send Another Card
-        </button>
       </div>
     </div>
   );
