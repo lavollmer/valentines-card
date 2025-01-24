@@ -13,14 +13,14 @@ const ValentinesCard: React.FC<Props> = ({ firstName, message, fromName }) => {
         <motion.div
           initial={{ opacity: 0, y: -400 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-80 h-80 bg-cherryRed rounded-lg"
+          className="p-10 bg-cherryRed rounded-lg"
         >
-          <div className="flex flex-col items-center justify-center h-full font-rubik text-white">
-            <div>
+          <div className="flex flex-col items-center justify-center space-y-4 h-full font-rubik text-white">
+            <div className="text-xl">
               <h1>Happy Valentine's Day {firstName}!</h1>
             </div>
-            <div>{message}</div>
-            <div>From {fromName}</div>
+            <div className="font-bold">{message}</div>
+            <div className="font-bold"> Love, {fromName}</div>
           </div>
         </motion.div>
       </div>
