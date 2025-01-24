@@ -9,7 +9,7 @@ interface Props {
 const ValentinesCard: React.FC<Props> = ({ firstName, message, fromName }) => {
   return (
     <>
-      <div className="bg-mauvePink h-screen flex justify-center items-center">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: -400 }}
           animate={{ opacity: 1, y: 0 }}
