@@ -15,6 +15,8 @@ export default {
         stone: "#fafaf9",
         cherryRed: "#9d252c",
         parchment: "#fcf5e5",
+        bubblePink: "#f875a6",
+        navyBlue: "#004b84",
       },
     },
     plugins: [],
