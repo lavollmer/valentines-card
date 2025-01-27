@@ -1,5 +1,6 @@
 import MainValentinesPage from "./components/MainValentinesPage";
 import Preview from "./components/Preview";
+import LandingPage from "./components/LandingPage";
 import SentCard from "./components/SentCard";
 import "./App.css";
 import "./index.css";
@@ -9,7 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainValentinesPage />} />
+        <Route path="/" element={<LandingPage/>}/>
+        <Route path="/valentines" element={<MainValentinesPage />} />
         <Route path="/previewcards" element={<Preview />} />
         <Route path="/sentcard" element={<SentCard />} />
       </Routes>

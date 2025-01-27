@@ -17,6 +17,7 @@ export default {
         parchment: "#fcf5e5",
         bubblePink: "#f875a6",
         navyBlue: "#004b84",
+        lightPink: "#f6a8c5",
       },
     },
     plugins: [],
