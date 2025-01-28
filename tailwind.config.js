@@ -18,7 +18,7 @@ export default {
         bubblePink: "#f875a6",
         navyBlue: "#004b84",
         lightPink: "#f6a8c5",
-        redred:"b72c0f"
+        redRed:"b72c0f"
       },
     },
     plugins: [],

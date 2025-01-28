@@ -1,15 +1,15 @@
 import "../App.css";
 import "../index.css";
 import Footer from "./Footer";
-import Navigation from "./Navigation";
+import HeartPost from "../assets/heartpostlogo.png";
 import CardPink from "../assets/combinedcardpink-removebg-preview.png";
 import BoxText from "./BoxText";
 
 const LandingPage = () => {
   return (
-    <div className="bg-bubblePink w-screen h-screen flex flex-col justify-between items-center p-10">
-      <div>
-        <Navigation />
+    <div className="bg-bubblePink w-screen h-screen p-10">
+      <div className="flex flex-start items-start space-y-4 pb-10">
+        <img src={HeartPost} alt="heart post" className="h-16 w-16" />
       </div>
       <div className="flex grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="font-rubik text-white flex flex-col items-center justify-center space-y-6">
@@ -35,7 +35,9 @@ const LandingPage = () => {
       </div>
       <div className="flex flex-col items-center justify-center space-y-4 pt-10">
         <div>
-          <h1 className="text-2xl text-white">Why Choose Our Valentine's Digital Cards?</h1>
+          <h1 className="text-2xl text-white">
+            Why Choose Our Valentine's Digital Cards?
+          </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
