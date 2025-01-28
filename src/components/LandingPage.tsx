@@ -3,6 +3,7 @@ import "../index.css";
 import Footer from "./Footer";
 import Navigation from "./Navigation";
 import CardPink from "../assets/combinedcardpink-removebg-preview.png";
+import BoxText from "./BoxText";
 
 const LandingPage = () => {
   return (
@@ -37,9 +38,24 @@ const LandingPage = () => {
           <h1>Why Choose Our Valentine's Digital Cards?</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <BoxText
+              Title="Personalized Designs"
+              Description="Choose from a wide range of stunning, customizable templates."
+            />
+          </div>
+          <div>
+            <BoxText
+              Title="Instant Delivery"
+              Description="No waiting for shipping – send your love in seconds!"
+            />
+          </div>
+          <div>
+            <BoxText
+              Title="Eco-Friendly & Convenient"
+              Description="No paper, no waste – just heartfelt messages, instantly delivered."
+            />
+          </div>
         </div>
       </div>
       <Footer />
