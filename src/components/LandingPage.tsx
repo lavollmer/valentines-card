@@ -3,6 +3,7 @@ import "../index.css";
 import Footer from "./Footer";
 import HeartPost from "../assets/heartpostlogo.png";
 import CardPink from "../assets/combinedcardpink-removebg-preview.png";
+import BackgroundCard from "../assets/backgroundCard.jpg"
 import BoxText from "./BoxText";
 import { FaArrowDown } from "react-icons/fa";
 
@@ -13,7 +14,7 @@ const LandingPage = () => {
         <img src={HeartPost} alt="heart post" className="h-16 w-16" />
       </div>
       <div className="bg-bubblePink p-10 flex grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="font-rubik text-white flex flex-col items-center justify-center space-y-6">
+        <div className="font-rubik p-10 text-white flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl bg-gradient-to-r from-navyBlue to-blue-800 inline-block font-bold text-transparent bg-clip-text">
             It's never been easier to send a Valentine's Day card
           </h1>
@@ -32,10 +33,10 @@ const LandingPage = () => {
           </button>
         </div>
         <div className="relative bg-bubblePink flex flex-col items-center justify-center">
-          <img src={CardPink} alt="pink card" className="h-96 w-96" />
+          <img src={BackgroundCard} alt="photo" className="rounded-lg"/>
         </div>
       </div>
-      <div className="bg-bubblePink flex flex-col items-center justify-center space-y-4 py-10">
+      <div className="bg-bubblePink flex flex-col items-center justify-center space-y-4 p-10">
         <div className="flex flex-col items-center justify-center space-y-4">
           <h1 className="text-2xl text-navyBlue font-bold">
             Why Choose Our Valentine's Digital Cards?
