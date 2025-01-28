@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage/>}/>
-        <Route path="/valentines" element={<MainValentinesPage />} />
+        <Route path="/create" element={<MainValentinesPage />} />
         <Route path="/previewcards" element={<Preview />} />
         <Route path="/sentcard" element={<SentCard />} />
       </Routes>
