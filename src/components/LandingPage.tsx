@@ -32,6 +32,16 @@ const LandingPage = () => {
           <img src={CardPink} alt="pink card" className="h-96 w-96" />
         </div>
       </div>
+      <div className="flex flex-col items-center justify-center space-y-4 bg-white">
+        <div>
+          <h1>Why Choose Our Valentine's Digital Cards?</h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <Footer />
     </div>
   );
