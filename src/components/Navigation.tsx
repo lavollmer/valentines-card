@@ -9,7 +9,7 @@ const Navigation = () => {
       <div>
         <h1 className="text-white font-rubik text-2xl">HeartPost</h1>
       </div>
-      <div className="flex flex-row justify-between items-center">
+      {/* <div className="flex flex-row justify-between items-center">
         <div>
           <nav>
             <ul className="flex flex-row space-x-4">
@@ -26,7 +26,7 @@ const Navigation = () => {
             </ul>
           </nav>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
