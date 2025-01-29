@@ -1,35 +1,40 @@
 import "../App.css";
 import "../index.css";
 import Footer from "./Footer";
-import HeartPost from "../assets/heartpostlogo.png";
 import BackgroundCard from "../assets/backgroundCard.jpg";
 import BoxText from "./BoxText";
 import ButtonVal from "./ButtonVal";
+import Navigation from "./Navigation";
 
 const LandingPage = () => {
   return (
     <div className="bg-salmon_pink w-screen h-screen">
-      <div className="flex flex-row justify-between space-y-4 p-10">
-        <img src={HeartPost} alt="heart post" className="h-24 w-24" />
-        <ButtonVal buttonTitle="Preview Cards" />
-      </div>
-      <div className="flex flex-col">
-        <div className="relative bg-salmon_pink flex flex-col items-stretch">
-          <img src={BackgroundCard} alt="photo" className="rounded-lg" />
+      <Navigation />
+      <header className="my-24">
+        <div
+          className="w-full bg-center bg-cover"
+          style={{ backgroundImage: `url(${BackgroundCard})` }}
+        >
+          <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 py-12">
+            <div className="text-center">
+              <div className="container px-4 mx-auto">
+                <div className="max-w-4xl text-center justify-center">
+                  <h1 className="mt-8 mb-6 text-4xl lg:text-5xl font-bold text-gray-100">
+                    It's never been easier to send a Valentine's Day card
+                  </h1>
+                  <p className="max-w-3xl mx-auto mb-10 text-lg text-gray-300">
+                    Looking for the perfect way to show your love this
+                    Valentine's Day? Send a personalized digital card that
+                    speaks from the heart!
+                  </p>
+                  <ButtonVal buttonTitle="Send A Card" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <div className="font-rubik p-10 text-black flex flex-col items-center justify-center space-y-6">
-          <h1 className="text-4xl bg-gradient-to-r from-white to-pink-200 inline-block font-bold text-transparent bg-clip-text">
-            It's never been easier to send a Valentine's Day card
-          </h1>
-          <p className="text-md text-left">
-            Looking for the perfect way to show your love this Valentine's Day?
-            Send a personalized digital card that speaks from the heart!
-          </p>
-          <ButtonVal buttonTitle="Create Your Card" />
-        </div>
-      </div>
+      </header>
+
       <div className="bg-salmon_pink flex flex-col items-center justify-center space-y-4 p-10">
         <div className="flex flex-col items-center justify-center space-y-4">
           <h1 className="text-2xl text-pale_dogwood font-bold">
