@@ -2,18 +2,20 @@ import "../App.css";
 import "../index.css";
 import Footer from "./Footer";
 import HeartPost from "../assets/heartpostlogo.png";
-import CardPink from "../assets/combinedcardpink-removebg-preview.png";
-import BackgroundCard from "../assets/backgroundCard.jpg"
+import BackgroundCard from "../assets/backgroundCard.jpg";
 import BoxText from "./BoxText";
 import { FaArrowDown } from "react-icons/fa";
 
 const LandingPage = () => {
   return (
     <div className="bg-rojo w-screen h-screen">
-      <div className="flex flex-start items-start space-y-4 p-10">
-        <img src={HeartPost} alt="heart post" className="h-16 w-16" />
+      <div className="flex flex-row justify-between space-y-4 md:pt-30 p-20">
+        <img src={HeartPost} alt="heart post" className="h-24 w-24" />
+        <button className="flex flex-row items-center justify-center px-4 py-2 rounded-full bg-white bg-opacity-40 hover:bg-opacity-60 hover:text-black">
+          Selection of Cards
+        </button>
       </div>
-      <div className="bg-rojo p-10 flex grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="flex flex-col">
         <div className="font-rubik p-10 text-black flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl bg-gradient-to-r from-salmon_pink to-pink-100 inline-block font-bold text-transparent bg-clip-text">
             It's never been easier to send a Valentine's Day card
@@ -32,8 +34,8 @@ const LandingPage = () => {
             <p>Send a Valentine's Card</p>
           </button>
         </div>
-        <div className="relative bg-rojo flex flex-col items-center justify-center">
-          <img src={BackgroundCard} alt="photo" className="rounded-lg"/>
+        <div className="relative bg-rojo flex flex-col items-center justify-center p-20">
+          <img src={BackgroundCard} alt="photo" className="rounded-lg" />
         </div>
       </div>
       <div className="bg-rojo flex flex-col items-center justify-center space-y-4 p-10">
