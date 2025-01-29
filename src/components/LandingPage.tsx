@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import HeartPost from "../assets/heartpostlogo.png";
 import BackgroundCard from "../assets/backgroundCard.jpg";
 import BoxText from "./BoxText";
+import ButtonVal from "./ButtonVal";
 import { FaArrowDown } from "react-icons/fa";
 
 const LandingPage = () => {
@@ -11,9 +12,7 @@ const LandingPage = () => {
     <div className="bg-rojo w-screen h-screen">
       <div className="flex flex-row justify-between space-y-4 md:pt-30 p-20">
         <img src={HeartPost} alt="heart post" className="h-24 w-24" />
-        <button className="flex flex-row items-center justify-center px-4 py-2 rounded-full bg-white bg-opacity-40 hover:bg-opacity-60 hover:text-black">
-          Selection of Cards
-        </button>
+        <ButtonVal buttonTitle="Preview Cards" />
       </div>
       <div className="flex flex-col">
         <div className="font-rubik p-10 text-black flex flex-col items-center justify-center space-y-6">
