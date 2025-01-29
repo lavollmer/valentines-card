@@ -27,7 +27,9 @@ const LandingPage = () => {
                     Valentine's Day? Send a personalized digital card that
                     speaks from the heart!
                   </p>
-                  <ButtonVal buttonTitle="Send A Card" />
+                  <div className="flex justify-center">
+                    <ButtonVal buttonTitle="Send A Card" />
+                  </div>
                 </div>
               </div>
             </div>
