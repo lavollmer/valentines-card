@@ -7,8 +7,12 @@ import ButtonVal from "./ButtonVal";
 import Navigation from "./Navigation";
 
 const LandingPage = () => {
+  const handleClick = () => {
+    console.log("Send a card");
+  };
+
   return (
-    <div className="bg-salmon_pink w-screen h-screen">
+    <div className="bg-salmon_pink">
       <Navigation />
       <header className="my-24">
         <div
@@ -36,14 +40,11 @@ const LandingPage = () => {
           </div>
         </div>
       </header>
-
-      <div className="bg-salmon_pink flex flex-col items-center justify-center space-y-4 p-10">
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <h1 className="text-2xl text-pale_dogwood font-bold">
-            Why Choose Our Valentine's Digital Cards?
-          </h1>
-        </div>
-        <div className="grid grid-cols-3 gap-4">
+      <div className="flex flex-col items-center justify-center p-10">
+        <h1 className="text-2xl text-white font-bold p-8">
+          Why Choose Our Valentine's Digital Cards?
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <BoxText
               Title="Personalized Designs"
@@ -63,7 +64,9 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     </div>
   );
