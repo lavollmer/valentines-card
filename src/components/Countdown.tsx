@@ -18,21 +18,25 @@ const Countdown = () => {
         <h2 className="text-4xl font-bold">Countdown to Valentine's Day</h2>
       </div>
       <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
-        <div className="flex flex-col">
-          <div className="font-rubik text-xl">
-            {daysLeft} <p>days</p>
+        <div className="flex flex-row space-x-6 font-rubik">
+          <div className="flex flex-col">
+            <p className="text-4xl">{daysLeft}</p>
+            <p>days</p>
           </div>
-          <div>
-            {hoursLeft}
-            <p>hours</p>
+          <p className="text-4xl">:</p>
+          <div className="flex flex-col">
+            <p className="text-4xl">{hoursLeft}</p>
+            <p>days</p>
           </div>
-          <div>
-            {minutesLeft}
-            <p>minutes</p>
+          <p className="text-4xl">:</p>
+          <div className="flex flex-col">
+            <p className="text-4xl">{minutesLeft}</p>
+            <p>days</p>
           </div>
-          <div>
-            {secondsLeft}
-            <p>seconds</p>
+          <p className="text-4xl">:</p>
+          <div className="flex flex-col">
+            <p className="text-4xl">{secondsLeft}</p>
+            <p>days</p>
           </div>
         </div>
       </div>
