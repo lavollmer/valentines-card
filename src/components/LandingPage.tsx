@@ -24,15 +24,14 @@ const LandingPage = () => {
               <div className="container px-4 mx-auto">
                 <div className="max-w-4xl text-center justify-center">
                   <h1 className="mt-8 mb-6 text-4xl lg:text-5xl font-bold text-gray-100">
-                    It's never been easier to send a Valentine's Day card
+                    Send a Personalized Valentine's Day Card They'll Never Forget
                   </h1>
                   <p className="max-w-3xl mx-auto mb-10 text-lg text-gray-300">
-                    Looking for the perfect way to show your love this
-                    Valentine's Day? Send a personalized digital card that
-                    speaks from the heart!
+                    Send a personalized digital card that
+                    speaks from the heart
                   </p>
                   <div className="flex justify-center">
-                    <ButtonVal buttonTitle="Send A Card" />
+                    <ButtonVal buttonTitle="Create A Card" />
                   </div>
                 </div>
               </div>
@@ -63,6 +62,9 @@ const LandingPage = () => {
               Description="No paper, no waste – just heartfelt messages, instantly delivered."
             />
           </div>
+        </div>
+        <div>
+
         </div>
         <div>
           <Footer />
