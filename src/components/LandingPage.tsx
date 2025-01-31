@@ -5,6 +5,7 @@ import BackgroundCard from "../assets/backgroundCard.jpg";
 import BoxText from "./BoxText";
 import ButtonVal from "./ButtonVal";
 import Navigation from "./Navigation";
+import Countdown from "./Countdown";
 
 const LandingPage = () => {
   const handleClick = () => {
@@ -24,11 +25,11 @@ const LandingPage = () => {
               <div className="container px-4 mx-auto">
                 <div className="max-w-4xl text-center justify-center">
                   <h1 className="mt-8 mb-6 text-4xl lg:text-5xl font-bold text-gray-100">
-                    Send a Personalized Valentine's Day Card They'll Never Forget
+                    Send a Personalized Valentine's Day Card They'll Never
+                    Forget
                   </h1>
                   <p className="max-w-3xl mx-auto mb-10 text-lg text-gray-300">
-                    Send a personalized digital card that
-                    speaks from the heart
+                    Send a personalized digital card that speaks from the heart
                   </p>
                   <div className="flex justify-center">
                     <ButtonVal buttonTitle="Create A Card" />
@@ -64,7 +65,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div>
-
+          <Countdown />
         </div>
         <div>
           <Footer />

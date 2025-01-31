@@ -1,28 +1,24 @@
-interface CountdownProps {
-    hours: number;
-    minutes: number;
-    seconds:number
-    days: number;
-}
+// interface CountdownProps {
+//   daysLeft: number;
+//   hoursLeft: number;
+//   minutesLeft: number;
+//   secondsLeft: number;
+// }
 
-const Countdown: React.FC<CountdownProps> = ({hours, minutes, seconds, days}) => {
-    var CountDownDate = new Date("Feb 14, 2025 00:00:00").getTime();
+const Countdown = () => {
+  // Creating a countdownDate
+  const countDownDate = new Date(2025, 2, 14).getTime();
 
-    var x = setInterval(function(){
-        var now = new Date().getTime()
+  const now = new Date().getTime();
 
-        var distance = countDownDate - now;
+  const distance = countDownDate - now;
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    })
+  const daysLeft = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hoursLeft =
+    Math.floor(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24);
+  const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (distance < 0) {
-        clearInterval(x);
-        return "over"
-    }
   return (
     <div>
       <div>
@@ -31,8 +27,10 @@ const Countdown: React.FC<CountdownProps> = ({hours, minutes, seconds, days}) =>
       <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
         <div className="flex flex-col">
           <div className="font-rubik text-5xl">
-            {days}
-            <p>days</p>
+            <p>
+              {daysLeft} days, {hoursLeft} hours, {minutesLeft} minutes,{" "}
+              {secondsLeft} seconds
+            </p>
           </div>
         </div>
       </div>
