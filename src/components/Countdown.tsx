@@ -1,12 +1,4 @@
-// interface CountdownProps {
-//   daysLeft: number;
-//   hoursLeft: number;
-//   minutesLeft: number;
-//   secondsLeft: number;
-// }
-
 const Countdown = () => {
-  // Creating a countdownDate
   const countDownDate = new Date(2025, 2, 14).getTime();
 
   const now = new Date().getTime();
@@ -14,23 +6,33 @@ const Countdown = () => {
   const distance = countDownDate - now;
 
   const daysLeft = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hoursLeft =
-    Math.floor(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24);
+  const hoursLeft = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center text-white">
       <div>
-        <h2>Countdown to Valentine's Day</h2>
+        <h2 className="text-4xl font-bold">Countdown to Valentine's Day</h2>
       </div>
       <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
         <div className="flex flex-col">
-          <div className="font-rubik text-5xl">
-            <p>
-              {daysLeft} days, {hoursLeft} hours, {minutesLeft} minutes,{" "}
-              {secondsLeft} seconds
-            </p>
+          <div className="font-rubik text-xl">
+            {daysLeft} <p>days</p>
+          </div>
+          <div>
+            {hoursLeft}
+            <p>hours</p>
+          </div>
+          <div>
+            {minutesLeft}
+            <p>minutes</p>
+          </div>
+          <div>
+            {secondsLeft}
+            <p>seconds</p>
           </div>
         </div>
       </div>
