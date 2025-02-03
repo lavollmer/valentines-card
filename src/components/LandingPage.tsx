@@ -6,6 +6,7 @@ import BoxText from "./BoxText";
 import ButtonVal from "./ButtonVal";
 import Navigation from "./Navigation";
 import Countdown from "./Countdown";
+import Customer from "./Customer";
 
 const LandingPage = () => {
   const handleClick = () => {
@@ -28,11 +29,11 @@ const LandingPage = () => {
                     Send a Personalized Valentine's Day Card They'll Never
                     Forget
                   </h1>
-                  <p className="max-w-3xl mx-auto mb-10 text-lg text-gray-300">
-                    Send a personalized digital card that speaks from the heart
+                  <p className="max-w-3xl mx-auto mb-10 text-lg text-gray-100">
+                    Send a digital card that speaks from the heart
                   </p>
                   <div className="flex justify-center">
-                    <ButtonVal buttonTitle="Create A Card" />
+                    <ButtonVal buttonTitle="Create Your Card" />
                   </div>
                 </div>
               </div>
@@ -67,7 +68,9 @@ const LandingPage = () => {
             />
           </div>
         </div>
-
+        <div>
+          <Customer />
+        </div>
         <div>
           <Footer />
         </div>

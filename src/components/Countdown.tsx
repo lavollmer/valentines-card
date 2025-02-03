@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Countdown: React.FC = () => {
+    // useState to set the state to 0 for all pieces
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -8,9 +9,12 @@ const Countdown: React.FC = () => {
     seconds: 0,
   });
 
+//   useEffect to set the countdown date
   useEffect(() => {
-    const countDownDate = new Date(2025, 2, 14).getTime();
+    // set to Valentine's Day
+    const countDownDate = new Date(2025, 1, 14).getTime();
 
+    // calculates time remaining until countDown date
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = countDownDate - now;
@@ -20,6 +24,7 @@ const Countdown: React.FC = () => {
         return;
       }
 
+    //   calculate the time left
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -29,6 +34,7 @@ const Countdown: React.FC = () => {
 
       setTimeLeft({ days, hours, minutes, seconds });
     };
+    // variable to call the updateCountdown function every 1000 seconds
     const intervalId = setInterval(updateCountdown, 1000);
     return () => clearInterval(intervalId);
   }, []);
