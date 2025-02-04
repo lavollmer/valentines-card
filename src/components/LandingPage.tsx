@@ -9,9 +9,6 @@ import Countdown from "./Countdown";
 import Customer from "./Customer";
 
 const LandingPage = () => {
-  const handleClick = () => {
-    console.log("Send a card");
-  };
 
   return (
     <div className="bg-gradient-to-r from-red-300 to-pink-600">
