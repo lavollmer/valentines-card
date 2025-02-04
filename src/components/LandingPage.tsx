@@ -7,8 +7,15 @@ import ButtonVal from "./ButtonVal";
 import Navigation from "./Navigation";
 import Countdown from "./Countdown";
 import Customer from "./Customer";
+import {useNavigate} from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate("/create");
+  };
 
   return (
     <div className="bg-gradient-to-r from-red-300 to-pink-600">
@@ -29,7 +36,7 @@ const LandingPage = () => {
                   <p className="max-w-3xl mx-auto mb-10 text-lg text-gray-100">
                     Send a digital card that speaks from the heart
                   </p>
-                  <div className="flex justify-center">
+                  <div onClick={handleClick} className="flex justify-center">
                     <ButtonVal buttonTitle="Create Your Card" />
                   </div>
                 </div>
