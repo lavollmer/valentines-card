@@ -20,9 +20,9 @@ const LandingPage = () => {
   return (
     <div className="bg-gradient-to-r from-red-300 to-pink-600">
       <Navigation />
-      <header className="my-24">
+      <header className="pt-14">
         <div
-          className="w-full bg-center bg-cover"
+          className="w-full h-full bg-center bg-cover"
           style={{ backgroundImage: `url(${BackgroundCard})` }}
         >
           <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 py-12">
@@ -45,7 +45,7 @@ const LandingPage = () => {
           </div>
         </div>
       </header>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center pt-10">
         <Countdown />
       </div>
       <div className="flex flex-col items-center justify-center p-10">

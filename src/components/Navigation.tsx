@@ -22,7 +22,7 @@ const Navigation = () => {
 
   return (
     <div className="fixed top-0 w-full">
-      <nav className="flex flex-row justify-between w-full bg-gradient-to-r from-red-300 to-pink-600 pl-10 pr-10 p-10">
+      <nav className="flex flex-row justify-between w-full bg-gradient-to-r from-red-300 to-pink-600 pl-10 pr-10 p-4 border">
         <h1 onClick={handleHomeClick} className="text-4xl text-white font-rubik font-bold cursor-pointer">HeartPost</h1>
         <div className="flex flex-row space-x-4 items-center justify-center">
           <div onClick={handleFAQClick}>

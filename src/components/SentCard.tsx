@@ -4,6 +4,7 @@ import ValentinesCard from "./ValentinesCard";
 import { useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 import ButtonVal from "../components/ButtonVal";
+import Footer from "./Footer";
 
 interface SentCardProps {
   selectedCard: string;
@@ -59,6 +60,7 @@ const SentCard: React.FC<SentCardProps> = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
