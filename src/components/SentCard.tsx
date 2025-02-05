@@ -45,11 +45,15 @@ const SentCard: React.FC<SentCardProps> = () => {
             />
           )}
           {selectedCard === "Vintage" && (
-            <Vintage
-              firstName={firstName}
-              message={message}
-              fromName={fromName}
-            />
+            <div className="transform  rounded-xl h-100 w-100 sm:h-64 sm:w-64 shadow-xl transition duration-300 hover:scale-120">
+              <div className="flex h-full justify-center items-center">
+                <Vintage
+                  firstName={firstName}
+                  message={message}
+                  fromName={fromName}
+                />
+              </div>
+            </div>
           )}
           {selectedCard === "Valentines" && (
             <ValentinesCard
