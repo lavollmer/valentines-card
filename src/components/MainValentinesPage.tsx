@@ -129,7 +129,6 @@ const MainValentinesPage: React.FC = () => {
             </button>
           </form>
         </div>
-
         <div>
           {showPreview && (
             <Preview
@@ -139,7 +138,7 @@ const MainValentinesPage: React.FC = () => {
             />
           )}
         </div>
-        <div>
+        <div className="pb-10">
           {showCard && selectedCard === "YouAreLoved" && (
             <YouAreLoved
               firstName={firstName}
@@ -161,10 +160,10 @@ const MainValentinesPage: React.FC = () => {
               fromName={fromName}
             />
           )}
-          <div className="pt-10">
-            <Footer />
-          </div>
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );
