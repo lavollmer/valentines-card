@@ -48,8 +48,8 @@ const LandingPage = () => {
       <div className="flex flex-col items-center justify-center pt-10">
         <Countdown />
       </div>
-      <div className="flex flex-col items-center justify-center p-10">
-        <h1 className="text-2xl text-white font-bold p-8">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-2xl text-white font-bold p-8 p-10">
           Why Choose Our Valentine's Digital Cards?
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -75,7 +75,7 @@ const LandingPage = () => {
         <div>
           <Customer />
         </div>
-        <div>
+        <div className="w-full h-full">
           <Footer />
         </div>
       </div>
