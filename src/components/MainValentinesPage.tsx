@@ -49,7 +49,7 @@ const MainValentinesPage: React.FC = () => {
         <Navigation />
       </div>
       <div className="bg-gradient-to-r from-red-300 to-pink-600 h-screen w-screen flex flex-col justify-center items-center font-rubik">
-        <div className="flex flex-col p-8 pt-20 md:pt-40">
+        <div className="flex flex-col p-8 md:pt-40">
           <h1 className="font-bold text-lg md:text-xl">
             Send a Valentine's Day Card
             <CiHeart className="inline-block text-2xl text-fairytalePink" />
