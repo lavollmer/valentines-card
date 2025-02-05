@@ -30,7 +30,7 @@ const SentCard: React.FC<SentCardProps> = () => {
       </div>
       <div className="flex flex-col h-screen w-screen bg-mauvePink justify-center items-center font-rubik space-y-10 bg-gradient-to-r from-red-300 to-pink-600">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-4xl text-white">Your Card Has Been Sent!</h1>
+          <h1 className="text-white font-rubik">Your Card Has Been Sent!</h1>
           <div onClick={returnHome} className="p-4">
             <ButtonVal buttonTitle="Sent Another Card" />
           </div>
