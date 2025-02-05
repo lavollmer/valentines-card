@@ -2,7 +2,7 @@ import "../index.css";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col space-y-10 md:space-x-4 text-center md:text-left md:flex-row justify-center md:justify-evenly bg-black pt-20 pb-20 font-rubik">
+    <div className="flex flex-col md:space-x-4 text-center md:text-left md:flex-row justify-center md:justify-evenly bg-black pt-20 pb-20 font-rubik">
       <div className="flex flex-row justify-center md:flex-col md:m-6">
         <h1 className="text-white text-4xl">HeartPost</h1>
       </div>

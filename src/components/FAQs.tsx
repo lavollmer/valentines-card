@@ -4,6 +4,7 @@ import PlusIcon from "../assets/plus.svg";
 import XIcon from "../assets/cancel.svg";
 import { CiHeart } from "react-icons/ci";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 function FAQs() {
   //initializes a state variable named "active" and a function to update it as "setActive" using the useState hook, intial value is set to false
@@ -38,7 +39,7 @@ function FAQs() {
     <>
       <div className="bg-gradient-to-r from-red-300 to-pink-600">
         <Navigation />
-        <div className="w-[100vw] h-[100vh] flex justify-center items-center bg-light-pink font-worksans">
+        <div className="w-[100vw] h-[100vh] flex justify-center items-center bg-light-pink font-rubik">
           <div className="w-[400px] md:max-w-[800px] md:w-auto z-10 rounded-lg flex flex-col p-3 text-dark-purple bg-white">
             <div className="flex items-center my-4">
               {/* <CiHeart className="h-4 w-4" /> */}
@@ -79,6 +80,9 @@ function FAQs() {
               ))}
             </div>
           </div>
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     </>

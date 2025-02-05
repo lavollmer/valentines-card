@@ -7,7 +7,8 @@ import ButtonVal from "./ButtonVal";
 import Navigation from "./Navigation";
 import Countdown from "./Countdown";
 import Customer from "./Customer";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import About from "./About";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const LandingPage = () => {
       <Navigation />
       <header className="pt-14">
         <div
-          className="w-full h-full bg-center bg-cover"
+          className="w-full h-full bg-center bg-cover rounded-lg"
           style={{ backgroundImage: `url(${BackgroundCard})` }}
         >
           <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 py-12">
@@ -45,6 +46,9 @@ const LandingPage = () => {
           </div>
         </div>
       </header>
+      <div>
+        <About />
+      </div>
       <div className="flex flex-col items-center justify-center pt-10">
         <Countdown />
       </div>
