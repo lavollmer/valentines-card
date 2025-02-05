@@ -6,14 +6,14 @@ interface Props {
 
 const Vintage: React.FC<Props> = ({ firstName, message, fromName }) => {
   return (
-    <div className="flex flex-col w-auto h-auto bg-timberwolf p-20">
-      <div>
+    <div className="flex flex-col items-center justify-center space-y-10 bg-timberwolf p-20 font-rubik rounded-lg">
+      <div className="font-bold">
         <h1>Happy Valentine's Day {firstName}!</h1>
       </div>
       <div>
         <h1>{message}</h1>
       </div>
-      <div>
+      <div className="font-bold">
         <h1>From {fromName}</h1>
       </div>
     </div>

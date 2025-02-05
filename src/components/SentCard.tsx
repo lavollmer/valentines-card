@@ -3,6 +3,7 @@ import Vintage from "./Vintage";
 import ValentinesCard from "./ValentinesCard";
 import { useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
+import ButtonVal from "../components/ButtonVal";
 
 interface SentCardProps {
   selectedCard: string;
@@ -29,15 +30,9 @@ const SentCard: React.FC<SentCardProps> = () => {
       </div>
       <div className="flex flex-col h-screen w-screen bg-mauvePink justify-center items-center font-rubik space-y-10 bg-gradient-to-r from-red-300 to-pink-600">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-xl text-white">Your Card Has Been Sent!</h1>
-          <div>
-            <button
-              type="button"
-              onClick={returnHome}
-              className="px-8 py-2 bg-eggplant hover:bg-greenCadet text-white rounded-lg font-rubik font-bold"
-            >
-              Send Another Card
-            </button>
+          <h1 className="font-4xl text-white">Your Card Has Been Sent!</h1>
+          <div onClick={returnHome} className="p-4">
+            <ButtonVal buttonTitle="Sent Another Card" />
           </div>
         </div>
         <div>
